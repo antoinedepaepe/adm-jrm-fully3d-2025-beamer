@@ -1,0 +1,58 @@
+% Beamer theme
+\usetheme{moloch}
+\molochset{
+  progressbar=frametitle
+}
+
+\usepackage{lmodern}
+\usefonttheme{professionalfonts}   % don’t override your chosen fonts
+\usefonttheme[onlymath]{serif}     % use a serif font just for math
+
+
+\usepackage{appendixnumberbeamer}
+
+% Common packages
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+
+% Custom macros
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\usepackage{amsmath}   % for \operatornamewithlimits, \argmin, etc.
+\usepackage{amssymb}   % for \mathbb (and loads amsfonts)
+\usepackage{bm}
+\usepackage[x11names,svgnames,table]{xcolor}
+
+\definecolor{orange}{HTML}{eb811b}
+\definecolor{green}{HTML}{008080}
+
+
+
+\usepackage{array}      % For extended column formatting
+\usepackage{caption}    % For customizing captions
+\usepackage{subcaption} % provides the subfigure environment
+
+
+\usepackage{graphicx}    % \includegraphics
+\usepackage{tikz}
+\usetikzlibrary{spy,shapes.misc}
+\usepackage{calc}
+\usepackage{multirow}
+
+
+% \usepackage[
+%   backend=biber,
+%   style=numeric,    % or authoryear, etc.
+%   sorting=none      % <-- “no sorting” → order of appearance
+% ]{biblatex}
+% \addbibresource{biblio/references.bib}
+
+\setbeamerfont{bibliography item}{size=\scriptsize}
+\setbeamerfont{bibliography entry author}{size=\scriptsize}
+\setbeamerfont{bibliography entry title}{size=\scriptsize}
+\setbeamerfont{bibliography entry location}{size=\scriptsize}
+\setbeamerfont{bibliography entry note}{size=\scriptsize}

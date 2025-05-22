@@ -1,0 +1,81 @@
+{
+  //–– Tools (programs) you can call
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-file-line-error",
+        // "-interaction=nonstopmode",  // <<–– add this
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+
+  //–– Build recipes made up of the above tools
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex²",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "pdflatex ➞ biber ➞ pdflatex²",
+      "tools": [
+        "pdflatex",
+        "biber",
+        "pdflatex",
+        "pdflatex"
+      ]
+    }
+  ],
+
+  //–– Make sure VS Code always uses the selected recipe
+  "latex-workshop.latex.build.forceRecipeUsage": true,
+
+  //–– Automatically open the PDF in a tab
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  //–– Clean auxiliary files on “Clean” command
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.fls",
+    "*.fdb_latexmk",
+    "*.synctex.gz",
+    "*.bcf"
+  ],
+  "latex-workshop.formatting.latex": "latexindent"
+}
