@@ -1,0 +1,71 @@
+%–––––––––––––––––––––––––––––––––––––––––––––––
+% main.tex
+% Master file that pulls everything together
+%–––––––––––––––––––––––––––––––––––––––––––––––
+
+\documentclass[10pt]{beamer}
+
+% load your custom preamble
+\input{include/preamble.tex}
+\input{./include/macros}
+
+
+\definecolor{mDarkTeal}{HTML}{23373b}
+
+
+
+
+% Presentation metadata
+\title{Solving Blind Inverse Problems:\\ Adaptive Diffusion Models for Motion-Corrected Sparse-View 4DCT}
+% \subtitle{A modern beamer theme}
+\author[De Paepe \and Bousse \and Phung-Ngoc \and Visvikis]{%
+  \underline{Antoine De Paepe}\inst{1}
+  \and
+  Alexandre Bousse\inst{1}
+  \and
+  Cl{\'e}mentine Phung-Ngoc\inst{1}
+  \and
+  Dimitris Visvikis\inst{1}
+}\institute{\inst{1} University of Western Brittany, LaTIM, UMR Inserm 1101, 29238 Brest, France}
+
+
+\date{Fully 3D 2025, Shanghai, China - May 27, 2025}
+
+% end local group (bg resets here)
+
+
+% graphics path
+\graphicspath{{figures/}}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+  {
+  \setbeamercolor{background canvas}{bg=mDarkTeal}
+  \setbeamercolor{normal text}{fg=white}
+    \begin{frame}
+      \maketitle
+      \begin{tikzpicture}[overlay, remember picture]
+      \node[above =1cm of current page.south, xshift=2cm, yshift=-0.5cm] {\includegraphics[width=6cm]{figures/cover/logo.png}};
+      \end{tikzpicture}
+    \end{frame}
+  }
+
+
+  % include each content file in order
+  \input{content/introduction.tex}
+  \input{content/methods.tex}
+  \input{content/experiments.tex}
+  \input{content/conclusion.tex}
+  \input{content/acknowledgements.tex}
+%   \appendix
+%   \input{content/appendix.tex}
+
+  % bibliography
+  \begin{frame}[allowframebreaks]{References}
+    \bibliographystyle{unsrt}
+    \bibliography{biblio/references}
+  \end{frame}
+
+
+\end{document}
