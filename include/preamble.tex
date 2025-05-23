@@ -4,6 +4,8 @@
   progressbar=frametitle
 }
 
+\setbeamertemplate{page number in head/foot}[framenumber]
+
 \usepackage{lmodern}
 \usefonttheme{professionalfonts}   % don’t override your chosen fonts
 \usefonttheme[onlymath]{serif}     % use a serif font just for math
@@ -44,11 +46,26 @@
 \usepackage{multirow}
 
 
-% \usepackage[
-%   backend=biber,
-%   style=numeric,    % or authoryear, etc.
-%   sorting=none      % <-- “no sorting” → order of appearance
-% ]{biblatex}
+
+% bibliography
+% \usepackage[style=authoryear,backend=biber,maxnames=99,giveninits=true]{biblatex}
+
+
+\usepackage[
+  backend=biber,            % use Biber
+  style=authoryear,         % author–year style as a basis
+  maxcitenames=1,           % when >1 author, show “<First> et al.”
+  mincitenames=1,           % same for the first citation
+  uniquelist=false          % don’t force extra names to disambiguate
+]{biblatex}
+
+\addbibresource{biblio/references.bib} 
+
+\renewcommand*{\mkbibparens}[1]{\mkbibbrackets{#1}}
+
+% if you prefer \cite rather than \parencite:
+\let\cite\parencite
+
 
 
 \setbeamerfont{bibliography item}{size=\scriptsize}

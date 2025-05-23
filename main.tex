@@ -10,6 +10,7 @@
 \input{./include/macros}
 
 
+
 \definecolor{mDarkTeal}{HTML}{23373b}
 
 
@@ -61,11 +62,14 @@
 %   \appendix
 %   \input{content/appendix.tex}
 
-  % bibliography
-  \begin{frame}[allowframebreaks]{References}
-    \bibliographystyle{unsrt}
-    \bibliography{biblio/references}
+
+  \begin{frame}
+      \printbibliography
   \end{frame}
 
+
+%   \begin{frame}[allowframebreaks]{References}
+%   \printbibliography
+% \end{frame}
 
 \end{document}

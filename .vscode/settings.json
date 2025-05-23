@@ -1,5 +1,5 @@
 {
-  //–– Tools (programs) you can call
+  //–– Tools
   "latex-workshop.latex.tools": [
     {
       "name": "pdflatex",
@@ -7,15 +7,7 @@
       "args": [
         "-synctex=1",
         "-file-line-error",
-        // "-interaction=nonstopmode",  // <<–– add this
         "%DOC%"
-      ]
-    },
-    {
-      "name": "bibtex",
-      "command": "bibtex",
-      "args": [
-        "%DOCFILE%"
       ]
     },
     {
@@ -27,17 +19,8 @@
     }
   ],
 
-  //–– Build recipes made up of the above tools
+  //–– One recipe: pdflatex → biber → pdflatex²
   "latex-workshop.latex.recipes": [
-    {
-      "name": "pdflatex ➞ bibtex ➞ pdflatex²",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
-    },
     {
       "name": "pdflatex ➞ biber ➞ pdflatex²",
       "tools": [
@@ -49,7 +32,7 @@
     }
   ],
 
-  //–– Make sure VS Code always uses the selected recipe
+  //–– Force VS Code to always use the selected recipe
   "latex-workshop.latex.build.forceRecipeUsage": true,
 
   //–– Automatically open the PDF in a tab
@@ -66,16 +49,12 @@
     "*.lot",
     "*.out",
     "*.toc",
-    "*.acn",
-    "*.acr",
-    "*.alg",
-    "*.glg",
-    "*.glo",
-    "*.gls",
-    "*.fls",
-    "*.fdb_latexmk",
-    "*.synctex.gz",
-    "*.bcf"
+    "*.bcf",
+    "*.run.xml",
+    "*.blg",
+    "*.synctex.gz"
   ],
+
+  //–– LaTeX formatter
   "latex-workshop.formatting.latex": "latexindent"
 }
